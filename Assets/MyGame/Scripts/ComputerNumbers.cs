@@ -29,6 +29,8 @@ public class ComputerNumbers : MonoBehaviour
         float a = float.Parse(ipVarA.text);
         float b = float.Parse(ipVarB.text);
         Debug.Log("in SetResult " + (a - b));
+        float resultAB = a - b;
+        result.text = resultAB.ToString();
         //result.text = SubstractNumbers(a,b);
     }
 
