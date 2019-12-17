@@ -3,26 +3,31 @@ using UnityEngine.UI;
 
 public class ComputerNumbers : MonoBehaviour
 {
-
-    public InputField ipVarA;
-    public InputField ipVarB;
+    public InputField input1;
+    public InputField input2;
     public Text result;
 
-    float varA;
-    float varB;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        SetResult();
-    }
+    private float varA;
+    private float varB;
 
     public void SetResult()
     {
-        float a = float.Parse(ipVarA.text);
-        float b = float.Parse(ipVarB.text);
-        Debug.Log("in SetResult " + (a - b));
-        float resultAB = a - b;
-        result.text = resultAB.ToString();
+        result.text = SubstractNumbers();
+    }
+
+    private string SubstractNumbers()
+    {
+        varA = float.Parse(input1.text);
+        varB = float.Parse(input2.text);
+
+        string success = (varA - varB).ToString();
+        return success;
+    }
+
+    public void ResetCounter()
+    {
+        input1.text = "";
+        input2.text = "";
+        result.text = "";
     }
 }
